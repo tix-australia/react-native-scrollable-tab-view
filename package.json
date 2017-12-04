@@ -1,7 +1,7 @@
 {
-  "name": "react-native-scrollable-tab-view",
+  "name": "react-native-scrollable-tab-view_tix",
   "version": "0.8.0",
-  "description": "",
+  "description": "Fork of https://github.com/brentvatne/react-native-scrollable-tab-view to fix an issue when using inside a scrollview",
   "main": "index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc . --ignore-path .gitignore",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brentvatne/react-native-scrollable-tab-view.git"
+    "url": "git+https://github.com/tix-australia/react-native-scrollable-tab-view.git"
   },
   "keywords": [
     "react-native-component",
@@ -21,13 +21,10 @@
   ],
   "author": "Brent Vatne",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/brentvatne/react-native-scrollable-tab-view/issues"
-  },
   "peerDependencies": {
     "react-native": ">=0.20.0"
   },
-  "homepage": "https://github.com/brentvatne/react-native-scrollable-tab-view#readme",
+  "homepage": "https://github.com/tix-australia/react-native-scrollable-tab-view",
   "dependencies": {
     "react-timer-mixin": "^0.13.3",
     "prop-types": "^15.6.0",

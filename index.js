@@ -14,13 +14,14 @@ const {
   InteractionManager,
 } = ReactNative;
 const TimerMixin = require('react-timer-mixin');
-
+import CustomViewPagerAndroid from './CustomViewPagerAndroid';
 const SceneComponent = require('./SceneComponent');
 const DefaultTabBar = require('./DefaultTabBar');
 const ScrollableTabBar = require('./ScrollableTabBar');
+import { isEqual } from 'lodash';
 
 const AnimatedViewPagerAndroid = Platform.OS === 'android' ?
-  Animated.createAnimatedComponent(ViewPagerAndroid) :
+  Animated.createAnimatedComponent(CustomViewPagerAndroid) :
   undefined;
 
 const ScrollableTabView = createReactClass({
@@ -108,7 +109,8 @@ const ScrollableTabView = createReactClass({
   },
 
   componentWillReceiveProps(props) {
-    if (props.children !== this.props.children) {
+    // if (props.children !== this.props.children) {
+    if (isEqual(props.children, this.props.children)) {
       this.updateSceneKeys({ page: this.state.currentPage, children: props.children, });
     }
 
@@ -332,7 +334,7 @@ const ScrollableTabView = createReactClass({
     if (!width || width <= 0 || Math.round(width) === Math.round(this.state.containerWidth)) {
       return;
     }
-    
+
     if (Platform.OS === 'ios') {
       const containerWidthAnimatedValue = new Animated.Value(width);
       // Need to call __makeNative manually to avoid a native animated bug. See
